@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d44330c9dfb774140b4ce4925d699e0a
+guid: 8cf3db3b0e3d94f41814a7a7f65e9295
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -480934830052561466
-    second: pixel-gold-cons-png-156068_0
+      213: -1955448553306655712
+    second: Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixel-gold-cons-png-156068_0
+      name: Background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2216
-        height: 2400
+        width: 474
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cdaa96f1506359f0800000000000000
-      internalID: -480934830052561466
+      spriteID: 024fa93b6e9dcd4e0800000000000000
+      internalID: -1955448553306655712
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pixel-gold-cons-png-156068_0: -480934830052561466
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
