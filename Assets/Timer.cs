@@ -11,23 +11,23 @@ public class Timer : MonoBehaviour
     {
         if (remainingTime > 0)
         {
-            // Decrementa o tempo apenas uma vez
+            // decrease time just once
             remainingTime -= Time.deltaTime;
         }
         else if (remainingTime < 0)
         {
-            // Se o tempo for negativo, corrigimos para zero
+            // If the time is negative, we correct it to zero
             remainingTime = 0;
-            // Você pode chamar um método de GameOver ou outro comportamento aqui
+            // You can call a GameOver method or other behavior here
             // GameOver();
             timerText.color = Color.red;
         }
 
-        // Calcula minutos e segundos
+        // Calculates minutes and seconds
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
 
-        // Atualiza o texto do timer
+        // Update timer text
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
