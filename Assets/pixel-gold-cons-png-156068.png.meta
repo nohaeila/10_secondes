@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-gold-cons-png-156068_0: -480934830052561466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
