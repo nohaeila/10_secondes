@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
         // Gérer le saut
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         // Flip du personnage selon la direction
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    void Jump()
+   /* void Jump()
     {
         if (isGrounded)
         {
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             canDoubleJump = false; // Désactiver le double saut
         }
-    }
+    }*/
 
     void FixedUpdate()
     {
