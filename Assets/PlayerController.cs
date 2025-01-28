@@ -2,67 +2,47 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Variables pour le mouvement
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float Speed;
+    public float JumpForce;
 
-    // Gestion du saut
-    private bool isGrounded;
-    private bool canDoubleJump;
+    private Rigidbody2D rig;
+    //private Animator anim;
 
-    // Références
-    private Rigidbody2D rb;
-    public Transform groundCheck;
-    public float groundCheckRadius = 0.2f;
-    public LayerMask groundLayer;
-
+    // Start is called before the first frame update
     void Start()
     {
-        // Récupérer le composant Rigidbody2D
-        rb = GetComponent<Rigidbody2D>();
+        rig = GetComponent<Rigidbody2D>();
+        //anim = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // Déplacement horizontal
-        float horizontalInput = Input.GetAxis("Horizontal");
-        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
-
-        // Gérer le saut
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-
-        // Flip du personnage selon la direction
-        if (horizontalInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (horizontalInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        Move();
     }
 
-   /* void Jump()
+    void Move()
     {
-        if (isGrounded)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            canDoubleJump = true; // Autoriser le double saut
-        }
-        else if (canDoubleJump)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            canDoubleJump = false; // Désactiver le double saut
-        }
-    }*/
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += movement * Time.deltaTime * Speed;
 
-    void FixedUpdate()
-    {
-        // Vérifie si le joueur est au sol
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (Input.GetAxis("Horizontal") > 0f)
+        {
+            //anim.SetBool("walk", true);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
+
+        if (Input.GetAxis("Horizontal") < 0f)
+        {
+            //anim.SetBool("walk", true);
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+
+        if (Input.GetAxis("Horizontal") == 0f)
+        {
+            //anim.SetBool("walk", false);
+           
+        }
+
     }
-
 }
-
-
-
-
